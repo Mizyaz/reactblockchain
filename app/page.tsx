@@ -5,8 +5,20 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./componen
 import { Input } from "./components/ui/input"
 import Image from "next/image"
 import Link from "next/link"
+import React, { useMemo } from 'react';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { clusterApiUrl } from '@solana/web3.js';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import '@solana/wallet-adapter-react-ui/styles.css'; // Cüzdan modal için gerekli stil
 
 export function Page() {
+  // Solana ağı için connection ayarı (devnet, mainnet-beta, testnet)
+  const network = clusterApiUrl('devnet');
+
+  // Kullanılacak cüzdan adaptörleri
+  const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-200">
       <header className="bg-white shadow">
@@ -18,6 +30,14 @@ export function Page() {
               <li><Link href="#" className="text-blue-600 hover:text-blue-800">Marketplace</Link></li>
               <li><Link href="#" className="text-blue-600 hover:text-blue-800">About</Link></li>
               <li><Link href="#" className="text-blue-600 hover:text-blue-800">Contact</Link></li>
+              <li><ConnectionProvider endpoint={network}>
+                <WalletProvider wallets={wallets} autoConnect>
+                  <WalletModalProvider>
+                      <WalletMultiButton />
+                  </WalletModalProvider>
+                </WalletProvider>
+              </ConnectionProvider>
+              </li>
             </ul>
           </nav>
         </div>
@@ -32,11 +52,11 @@ export function Page() {
               <Button size="lg">Explore NFTs</Button>
             </div>
             <div className="md:w-1/2">
-              <Image 
-                src="/placeholder.svg?height=400&width=400" 
-                alt="Featured Athlete" 
-                width={400} 
-                height={400} 
+              <Image
+                src="/placeholder.svg?height=400&width=400"
+                alt="Featured Athlete"
+                width={400}
+                height={400}
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -64,11 +84,11 @@ export function Page() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
               <Card key={item} className="overflow-hidden">
-                <Image 
-                  src={`/placeholder.svg?height=300&width=300`} 
-                  alt={`Athlete ${item}`} 
-                  width={300} 
-                  height={300} 
+                <Image
+                  src={`/placeholder.svg?height=300&width=300`}
+                  alt={`Athlete ${item}`}
+                  width={300}
+                  height={300}
                   className="w-full h-48 object-cover"
                 />
                 <CardContent className="p-4">
