@@ -1,11 +1,9 @@
-'use client'
-
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
 import Image from "next/image"
 
-export function  Page() {
+export default function About() {
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4  py-8">
       <h1 className="text-4xl font-bold mb-8 text-blue-800 font-montserrat">About SportsNFT</h1>
       
       <div className="flex flex-col md:flex-row gap-8 mb-12">

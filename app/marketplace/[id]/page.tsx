@@ -1,10 +1,8 @@
-'use client'
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 
-export function Page({ params }: { params: { id: string } }) {
+export default function NFTPage({ params }: { params: { id: string } }) {
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row gap-8">

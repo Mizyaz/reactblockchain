@@ -1,13 +1,11 @@
-'use client'
-
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Button } from "../components/ui/button"
+import { Card, CardContent, CardFooter } from "../components/ui/card"
+import { Input } from "../components/ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select"
 import Image from "next/image"
 import Link from "next/link"
 
-export function Page() {
+export default function Marketplace() {
   return (
     <main className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8 text-blue-800 font-montserrat">NFT Marketplace</h1>
@@ -62,3 +60,4 @@ export function Page() {
     </main>
   )
 }
+
