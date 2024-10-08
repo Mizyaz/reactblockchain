@@ -12,6 +12,7 @@ import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css'; // Cüzdan modal için gerekli stil
+import MintNFT from "../MintNFT";
 
 export function Page() {
   // Solana ağı için connection ayarı (devnet, mainnet-beta, testnet)
@@ -37,6 +38,9 @@ export function Page() {
                   </WalletModalProvider>
                 </WalletProvider>
               </ConnectionProvider>
+              </li>
+              <li>
+                <MintNFT/>
               </li>
             </ul>
           </nav>
