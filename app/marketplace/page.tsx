@@ -38,7 +38,7 @@ export default function Marketplace() {
         {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
           <Card key={item} className="overflow-hidden">
             <Image 
-              src={`/placeholder.svg?height=300&width=300`} 
+              src={`/assets/athlete.png?height=300&width=300`} 
               alt={`Athlete ${item}`} 
               width={300} 
               height={300} 

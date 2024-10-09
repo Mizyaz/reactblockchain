@@ -8,7 +8,7 @@ export default function NFTPage({ params }: { params: { id: string } }) {
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
           <Image 
-            src={`/placeholder.svg?height=600&width=600`} 
+            src={`/assets/athlete.png?height=600&width=600`} 
             alt={`Athlete ${params.id}`} 
             width={600} 
             height={600} 

@@ -43,7 +43,7 @@ export default function About() {
           <Card key={index}>
             <CardContent className="p-4 text-center">
               <Image 
-                src={`/placeholder.svg?height=150&width=150`} 
+                src={`/assets/tokenplay.png?height=150&width=150`} 
                 alt={`Team Member ${index + 1}`} 
                 width={150} 
                 height={150} 
