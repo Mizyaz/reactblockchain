@@ -12,15 +12,15 @@ import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
-import MintNFT from "../MintNFT";
 
+import MintNFT from "../MintNFT";
 import lebronImage from './assets/lebron.jpg';
 import ronaldoImage from './assets/ronaldo.jpg';
 import serenaImage from './assets/serena.jpg';
 import bradyImage from './assets/brady.jpg';
 import nftImage from './assets/nft_image.png';
 import featuredAthleteImage from './assets/featured_athlete_image.png';
-import tokenplayImage from './assets/tokenplay.png';
+import tokenplayImage from './assets/tp1.png';
 import { token } from "@project-serum/anchor/dist/cjs/utils"
 
 export function Page() {
@@ -44,8 +44,8 @@ export function Page() {
                     <Image
                       src={tokenplayImage}
                       alt="Tokenplay"
-                      width={400}
-                      height={400}
+                      width={650}
+                      height={650}
                       className="rounded-lg shadow-lg"
                     />
                   </div>
@@ -102,7 +102,7 @@ export function Page() {
                 </div>
               </section>
 
-              <section className="bg-blue-600 text-white rounded-lg p-8 text-center">
+              <section className="bg-blue-300 text-white rounded-lg p-8 text-center">
                 <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
                 <p className="mb-6">Be the first to know about new athlete NFTs and exclusive drops.</p>
                 <div className="flex max-w-md mx-auto">
@@ -113,7 +113,7 @@ export function Page() {
 
               <section className="mt-16 text-center">
                 <h2 className="text-3xl font-bold mb-8 text-blue-800">Mint Your Own NFT</h2>
-                <MintNFT />
+                <WalletMultiButton/>
               </section>
             </main>
           </div>
