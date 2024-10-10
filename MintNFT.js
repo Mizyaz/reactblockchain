@@ -8,10 +8,10 @@ import { Program, web3 } from "@project-serum/anchor";
 const idl = require('./idl.json');  // Akıllı kontratın IDL dosyası
 const programID = new PublicKey("yc7wEoXNfH6MUV1tExTh2eRtkiA1U1U6nQTKNWKihDm");  // Akıllı kontratın program ID'si
 const network = clusterApiUrl("devnet");
+const nft_json=require("./assets/example.json")
 
 const MintNFT = () => {
   const [walletAddress, setWalletAddress] = useState(null);
-
   // Solana cüzdanını bağla
   const connectWallet = async () => {
     if (window.solana) {
@@ -36,17 +36,20 @@ const MintNFT = () => {
 
   // NFT mint fonksiyonu
   const mintNFT = async () => {
+    console.log("bbbbbb")
     const provider = getProvider();
     const program = new Program(idl, programID, provider);
-
+    const publicKey = new anchor.web3.PublicKey(walletAddress);
     const mintKey = anchor.web3.Keypair.generate();
-    const tokenAccount = await web3.PublicKey.findProgramAddressSync(
-      [walletAddress.toBuffer(), TOKEN_PROGRAM_ID.toBuffer(), mintKey.publicKey.toBuffer()],
+
+    const tokenAccount = web3.PublicKey.findProgramAddressSync(
+      [publicKey.toBuffer(), TOKEN_PROGRAM_ID.toBuffer(), mintKey.publicKey.toBuffer()],
       program.programId
     );
 
     try {
-      await program.methods.mintNft("NFT Title", "NFT Symbol", "https://raw.githubusercontent.com/Coding-and-Crypto/Rust-Solana-Tutorial/refs/heads/master/nfts/mint-nft/assets/example.json", {
+      console.log( "aaaaaaaaa")
+      await program.rcp.mintNft("NFT Title", "NFT Symbol", nft_json, {
         accounts: {
           mint: mintKey.publicKey,
           tokenAccount: tokenAccount[0],
@@ -66,7 +69,7 @@ const MintNFT = () => {
   return (
     <div>
       {walletAddress ? (
-        <button onClick={mintNFT}>Mint NFT</button>
+        <button onClick={mintNFT}>Mint NFT </button>
       ) : (
         <button onClick={connectWallet}>Cüzdan Bağla</button>
       )}
