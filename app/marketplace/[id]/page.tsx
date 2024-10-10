@@ -1,6 +1,8 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "../../components/ui/button"
+import { Card, CardContent } from "../../components/ui/card"
 import Image from "next/image"
+import nftImage from '../../assets/nft_image.png';
+
 
 export default function NFTPage({ params }: { params: { id: string } }) {
   return (
@@ -8,7 +10,7 @@ export default function NFTPage({ params }: { params: { id: string } }) {
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
           <Image 
-            src={`/assets/athlete.png?height=600&width=600`} 
+            src={nftImage} 
             alt={`Athlete ${params.id}`} 
             width={600} 
             height={600} 

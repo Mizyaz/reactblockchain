@@ -3,14 +3,14 @@ import Image from "next/image"
 
 export default function About() {
   return (
-    <main className="container mx-auto px-4  py-8">
-      <h1 className="text-4xl font-bold mb-8 text-blue-800 font-montserrat">About SportsNFT</h1>
+    <main className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-8 text-blue-800 font-montserrat">About TokenPlay</h1>
       
       <div className="flex flex-col md:flex-row gap-8 mb-12">
         <div className="md:w-1/2">
           <Image 
             src="/placeholder.svg?height=400&width=600" 
-            alt="About SportsNFT" 
+            alt="About TokenPlay" 
             width={600} 
             height={400} 
             className="rounded-lg shadow-lg"
@@ -18,12 +18,12 @@ export default function About() {
         </div>
         <div className="md:w-1/2">
           <h2 className="text-2xl font-bold mb-4 text-blue-600 font-montserrat">Our Mission</h2>
-          <p className="mb-4 font-inter">At SportsNFT, we're passionate about bringing fans closer to their favorite athletes through the power of blockchain technology. Our platform allows sports enthusiasts to own, collect, and trade unique digital assets representing memorable moments in sports history.</p>
+          <p className="mb-4 font-inter">At TokenPlay, we're passionate about bringing fans closer to their favorite athletes through the power of blockchain technology. Our platform allows sports enthusiasts to own, collect, and trade unique digital assets representing memorable moments in sports history.</p>
           <p className="font-inter">We believe in the future of digital ownership and aim to create a vibrant marketplace where fans, athletes, and teams can connect in new and exciting ways.</p>
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold mb-6 text-blue-800 font-montserrat">Why Choose SportsNFT?</h2>
+      <h2 className="text-3xl font-bold mb-6 text-blue-800 font-montserrat">Why Choose TokenPlay?</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {['Authenticity', 'Community', 'Innovation'].map((feature, index) => (
           <Card key={index}>

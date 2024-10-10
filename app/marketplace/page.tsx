@@ -5,6 +5,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import Image from "next/image"
 import Link from "next/link"
 
+import nftImage from '../assets/nft_image.png';
+
 export default function Marketplace() {
   return (
     <main className="container mx-auto px-4 py-8">
@@ -38,7 +40,7 @@ export default function Marketplace() {
         {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
           <Card key={item} className="overflow-hidden">
             <Image 
-              src={`/assets/athlete.png?height=300&width=300`} 
+              src={nftImage} 
               alt={`Athlete ${item}`} 
               width={300} 
               height={300} 
