@@ -24,7 +24,7 @@ export function Page() {
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-200">
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-blue-600">SportsNFT</h1>
+          <h1 className="text-3xl font-bold text-blue-600">TokenPlay</h1>
           <nav>
             <ul className="flex space-x-4">
               <li><Link href="#" className="text-blue-600 hover:text-blue-800">Home</Link></li>
@@ -57,7 +57,7 @@ export function Page() {
             </div>
             <div className="md:w-1/2">
               <Image
-                src="/placeholder.svg?height=400&width=400"
+                src="/assets/featured_athlete_image.png?height=400&width=400"
                 alt="Featured Athlete"
                 width={400}
                 height={400}
